@@ -5,9 +5,10 @@
   1/Make Action Folder
   2/index.jsx to write Action Type.. for example 
 
-  export const IncAction = () => {
-     return { type: "INCRIMENT" };
-  };
+
+        export const IncAction = () => {
+         return { type: "INCRIMENT" };
+        };
 
         export const DicAction =()=>{
                 return {type : "DICRIMENT"}
@@ -17,7 +18,10 @@
                 return {type : "DIVIDET"}
         }
         export const Mul =()=>{
-                return {type : "MULTIFICATION"}
+                return {type : "MULTIFICATION"
+                }
+
+
 
 
 ### REDUCE 
@@ -29,13 +33,13 @@
 
   Write in reducer File ---
 
-     const initialState = {
-        count : 0,
-        divMul : 5,
-   }
+      const initialState = {
+         count : 0,
+         divMul : 5,
+       }
 
-   const countMath=(state = initialState,action)=>{
-        switch(action.type){
+      const countMath=(state = initialState,action)=>{
+             switch(action.type){
                 case "INCRIMENT" : {
                        
                         return {...initialState,  count : state.count + 1}
@@ -54,9 +58,9 @@
                         return {...initialState,divMul : newState}
                 };
                 default : return state
-        }
-   }
-    export default countMath;
+              }
+            }
+        export default countMath;
 
 
     2 > Conbaind This Reduce File in Reduce Folder of index.jsx
@@ -85,7 +89,9 @@
 
 
 ### Store DATa Provide ROOT project
+
      stap - 1 
+
 
         import Store from "./Store"
         import {Provider} from "react-redux"
@@ -103,12 +109,16 @@
         import {IncAction,DicAction,Div,Mul} from "./Action/Index"
         import { useDispatch,useSelector } from "react-redux"
 
-   write in file example const app=()=> {
-        const CountCarrentState = useSelector((state)=> state.Reducer.count)
-        const DivMulCarrentState = useSelector((state)=> state.Reducer.divMul)
-        const disPatch = useDispatch()
 
-   return (
+
+          write in file example const app=()=> {
+          const CountCarrentState = useSelector((state)=> state.Reducer.count)
+          const DivMulCarrentState = useSelector((state)=> state.Reducer.divMul)
+          const disPatch = useDispatch()
+
+
+
+      return (
 
   
 
